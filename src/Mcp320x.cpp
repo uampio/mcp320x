@@ -14,14 +14,14 @@ using MCP3204Ch = MCP320xTypes::MCP3204::Channel;
 using MCP3208Ch = MCP320xTypes::MCP3208::Channel;
 
 template <typename T>
-MCP320x<T>::MCP320x(uint16_t vref, uint8_t csPin, SPIClass *spi)
+MCP320x<T>::MCP320x(uint16_t vref, PinName csPin, SPIClass *spi)
   : mVref(vref)
   , mCsPin(csPin)
   , mSplSpeed(0)
   , mSpi(spi) {}
 
 template <typename T>
-MCP320x<T>::MCP320x(uint16_t vref, uint8_t csPin)
+MCP320x<T>::MCP320x(uint16_t vref, PinName csPin)
   : MCP320x(vref, csPin, &SPI) {}
 
 template <typename T>

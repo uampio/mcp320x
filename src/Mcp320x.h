@@ -131,7 +131,7 @@ public:
    * @param [in] csPin pin number to use for chip select.
    * @param [in] spi reference to the SPI interface to use.
    */
-  MCP320x(uint16_t vref, uint8_t csPin, SPIClass *spi);
+  MCP320x(uint16_t vref, PinName csPin, SPIClass *spi);
 
   /**
    * Initiates a MCP320x object. The chip select pin must be already
@@ -140,7 +140,7 @@ public:
    * @param [in] vref the ADC reference voltage in mV.
    * @param [in] csPin the pin number to use for chip select.
    */
-  MCP320x(uint16_t vref, uint8_t csPin);
+  MCP320x(uint16_t vref, PinName csPin);
 
   /**
    * Calibrates read timing using the supplied channel. A calibration
@@ -445,7 +445,7 @@ private:
 private:
 
   uint16_t mVref;
-  uint8_t mCsPin;
+  PinName mCsPin;
   uint32_t mSplSpeed;
   SPIClass *mSpi;
 };
